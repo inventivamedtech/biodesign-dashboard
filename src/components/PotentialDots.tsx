@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { getPotentialColor } from '../lib/colors'
 
 interface Props {
@@ -9,44 +8,39 @@ interface Props {
 }
 
 export function PotentialDots({ potential, showLabel = false, editable = false, onPotentialChange }: Props) {
-  const [localPotential, setLocalPotential] = useState(potential)
-  const [hovered, setHovered] = useState<number | null>(null)
+  const color = getPotentialColor(potential)
 
-  // Sync from parent prop when it changes
-  if (localPotential !== potential) {
-    setLocalPotential(potential)
+  if (editable) {
+    return (
+      <div className="flex items-center gap-1">
+        {[0, 1, 2, 3].map((i) => (
+          <button
+            key={i}
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation()
+              onPotentialChange?.(i)
+            }}
+            className="w-6 h-6 rounded text-xs font-bold transition-all hover:scale-110"
+            style={{
+              backgroundColor: i === potential ? getPotentialColor(i) : '#F1F5F9',
+              color: i === potential ? 'white' : '#94A3B8',
+            }}
+          >
+            {i}
+          </button>
+        ))}
+      </div>
+    )
   }
 
-  const activePotential = hovered !== null ? hovered : localPotential
-  const activeColor = getPotentialColor(activePotential)
-
   return (
-    <div
-      className={`flex items-center gap-1.5 ${editable ? 'cursor-pointer' : ''}`}
-      onMouseLeave={() => editable && setHovered(null)}
+    <span
+      className="inline-flex items-center justify-center px-1.5 py-0.5 rounded text-xs font-bold"
+      style={{ backgroundColor: `${color}20`, color }}
     >
-      {[0, 1, 2, 3].map((i) => (
-        <span
-          key={i}
-          className={`w-2 h-2 rounded-full transition-all ${
-            editable ? 'hover:scale-150' : ''
-          }`}
-          style={{
-            backgroundColor: i <= activePotential ? activeColor : '#E2E8F0',
-          }}
-          onMouseEnter={() => editable && setHovered(i)}
-          onClick={(e) => {
-            if (!editable) return
-            e.stopPropagation()
-            setLocalPotential(i)
-            setHovered(null)
-            onPotentialChange?.(i)
-          }}
-        />
-      ))}
-      {showLabel && (
-        <span className="text-xs text-slate-500 ml-1">{localPotential}/3</span>
-      )}
-    </div>
+      {potential}/3
+      {showLabel && <span className="ml-1 text-slate-500 font-normal">potencial</span>}
+    </span>
   )
 }

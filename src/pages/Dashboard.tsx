@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Eye, FileText, Layers, ArrowRight, Upload } from 'lucide-react'
+import { Eye, FileText, Layers, Upload } from 'lucide-react'
 import { useDataStore } from '../data/store'
 import { ClusterDonut } from '../components/charts/ClusterDonut'
 import { TypeBar } from '../components/charts/TypeBar'

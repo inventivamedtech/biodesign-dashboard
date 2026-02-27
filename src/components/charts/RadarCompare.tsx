@@ -25,7 +25,7 @@ export function RadarCompare({ needs }: Props) {
   const data = dimensions.map((dim) => {
     const point: Record<string, string | number> = { dimension: dim.label }
     needs.forEach((need, i) => {
-      const raw = (need as Record<string, unknown>)[dim.key]
+      const raw = (need as unknown as Record<string, unknown>)[dim.key]
       const value = typeof raw === 'number' ? raw : 0
       point[`need${i}`] = dim.max > 0 ? (value / dim.max) * 100 : 0
     })

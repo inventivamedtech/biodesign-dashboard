@@ -20,7 +20,7 @@ export function TypeBar({ data }: Props) {
             tick={{ fontSize: 12, fill: '#64748B' }}
           />
           <Tooltip
-            formatter={(value: number) => [`${value}`, 'Quantidade']}
+            formatter={(value?: number) => [`${value}`, 'Quantidade']}
             contentStyle={{
               borderRadius: '8px',
               border: '1px solid #E2E8F0',

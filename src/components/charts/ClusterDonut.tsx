@@ -30,7 +30,7 @@ export function ClusterDonut({ data }: Props) {
               ))}
             </Pie>
             <Tooltip
-              formatter={(value: number, name: string) => [`${value} needs`, name]}
+              formatter={(value?: number, name?: string) => [`${value} needs`, name ?? '']}
               contentStyle={{
                 borderRadius: '8px',
                 border: '1px solid #E2E8F0',

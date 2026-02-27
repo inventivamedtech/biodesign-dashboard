@@ -17,7 +17,9 @@ export function CompareTool() {
       .filter(
         (n) =>
           !selected.includes(n.id) &&
-          (n.observation.toLowerCase().includes(term) ||
+          (n.idFilha.toLowerCase().includes(term) ||
+            n.idMae.toLowerCase().includes(term) ||
+            n.observation.toLowerCase().includes(term) ||
             n.problem.toLowerCase().includes(term) ||
             n.needStatement.toLowerCase().includes(term) ||
             n.cluster.toLowerCase().includes(term))

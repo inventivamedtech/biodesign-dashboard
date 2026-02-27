@@ -7,6 +7,7 @@ import {
   GitCompare,
   Upload,
   RefreshCw,
+  ExternalLink,
 } from 'lucide-react'
 import { useState } from 'react'
 import { useDataStore } from '../data/store'
@@ -65,6 +66,15 @@ export function Sidebar({ onRefresh }: SidebarProps) {
       </nav>
 
       <div className="p-4 border-t border-white/10 space-y-2">
+        <a
+          href="https://docs.google.com/spreadsheets/d/1UMPPpHTUgQKfsQu_nRrfHYJjnt70oqv3b4C8MeZrHtw/edit"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 w-full px-3 py-2 rounded-lg text-xs text-slate-300 hover:bg-sidebar-hover hover:text-white transition-colors"
+        >
+          <ExternalLink size={14} />
+          Abrir Planilha
+        </a>
         <button
           onClick={handleRefresh}
           disabled={spinning}

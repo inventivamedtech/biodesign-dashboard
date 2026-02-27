@@ -148,16 +148,16 @@ export function Observations() {
 
   return (
     <div className="max-w-6xl mx-auto">
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
         <div>
-          <h1 className="text-2xl font-bold text-slate-900">Observações</h1>
+          <h1 className="text-xl md:text-2xl font-bold text-slate-900">Observações</h1>
           <p className="text-sm text-slate-500 mt-1">
             {filtered.length} de {observations.length} observações
           </p>
         </div>
         <button
           onClick={handleOpenForm}
-          className="flex items-center gap-1.5 px-3 py-1.5 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors"
+          className="flex items-center gap-1.5 px-3 py-1.5 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors self-start sm:self-auto"
         >
           <Plus size={16} />
           Nova Observação
@@ -180,7 +180,8 @@ export function Observations() {
       )}
 
       <div className="bg-white border border-slate-200 rounded-xl overflow-hidden">
-        <table className="w-full text-sm">
+        <div className="overflow-x-auto">
+        <table className="w-full text-sm min-w-[600px]">
           <thead>
             <tr className="bg-slate-50 border-b border-slate-200">
               <th className="w-8 px-3 py-3"></th>
@@ -410,6 +411,7 @@ export function Observations() {
             })}
           </tbody>
         </table>
+        </div>
 
         {filtered.length === 0 && !showForm && (
           <div className="text-center py-12 text-slate-400">

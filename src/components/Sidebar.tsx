@@ -23,9 +23,10 @@ const navItems = [
 
 interface SidebarProps {
   onRefresh?: () => Promise<void>
+  onNavigate?: () => void
 }
 
-export function Sidebar({ onRefresh }: SidebarProps) {
+export function Sidebar({ onRefresh, onNavigate }: SidebarProps) {
   const [spinning, setSpinning] = useState(false)
   const lastUpdate = useDataStore((s) => s.lastUpdate)
 
@@ -51,6 +52,7 @@ export function Sidebar({ onRefresh }: SidebarProps) {
           <NavLink
             key={to}
             to={to}
+            onClick={onNavigate}
             className={({ isActive }) =>
               `flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
                 isActive

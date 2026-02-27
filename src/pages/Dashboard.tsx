@@ -80,7 +80,7 @@ export function Dashboard() {
       </div>
 
       {/* Metrics */}
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
         <MetricCard
           icon={<Eye size={20} />}
           label="Observações"
@@ -113,28 +113,25 @@ export function Dashboard() {
       {/* Funnel */}
       <div className="bg-white border border-slate-200 rounded-xl p-5">
         <h3 className="text-sm font-semibold text-slate-700 mb-4">Pipeline Biodesign</h3>
-        <div className="flex items-center gap-3">
+        <div className="grid grid-cols-2 md:flex md:items-center gap-2 md:gap-3">
           <FunnelStep
             label="Observações"
             count={stats.totalObs}
             color="#2563EB"
             active
           />
-          <ArrowRight size={16} className="text-slate-300 shrink-0" />
           <FunnelStep
             label="Needs Stage 0"
             count={stats.totalNeeds}
             color="#7C3AED"
             active
           />
-          <ArrowRight size={16} className="text-slate-300 shrink-0" />
           <FunnelStep
             label="Stage 1"
             count={0}
             color="#0891B2"
             active={false}
           />
-          <ArrowRight size={16} className="text-slate-300 shrink-0" />
           <FunnelStep
             label="Stage 2"
             count={0}
@@ -144,7 +141,7 @@ export function Dashboard() {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
         {/* Cluster Distribution */}
         {stats.clusterData.length > 0 && (
           <div className="bg-white border border-slate-200 rounded-xl p-5">

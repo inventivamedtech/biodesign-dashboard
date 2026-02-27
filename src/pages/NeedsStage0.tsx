@@ -87,9 +87,9 @@ export function NeedsStage0() {
 
   return (
     <div className="max-w-7xl mx-auto">
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
         <div>
-          <h1 className="text-2xl font-bold text-slate-900">Needs Stage 0</h1>
+          <h1 className="text-xl md:text-2xl font-bold text-slate-900">Needs Stage 0</h1>
           <p className="text-sm text-slate-500 mt-1">
             {filtered.length} de {needs.length} needs
           </p>
@@ -122,7 +122,7 @@ export function NeedsStage0() {
 
       <div className="bg-white border border-slate-200 rounded-xl overflow-hidden">
         <div className="overflow-x-auto">
-          <table className="w-full text-sm">
+          <table className="w-full text-sm min-w-[700px]">
             <thead>
               <tr className="bg-slate-50 border-b border-slate-200">
                 <th className="px-3 py-3 text-left text-xs font-semibold text-slate-500 uppercase tracking-wider whitespace-nowrap">ID Filha</th>

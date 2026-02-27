@@ -59,7 +59,7 @@ export function CompareTool() {
   return (
     <div className="max-w-6xl mx-auto">
       <div className="mb-6">
-        <h1 className="text-2xl font-bold text-slate-900">Comparar Needs</h1>
+        <h1 className="text-xl md:text-2xl font-bold text-slate-900">Comparar Needs</h1>
         <p className="text-sm text-slate-500 mt-1">
           Selecione 2 a 4 needs para comparar lado a lado
         </p>

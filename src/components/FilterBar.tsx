@@ -30,9 +30,9 @@ export function FilterBar({
   searchPlaceholder = 'Buscar...',
 }: Props) {
   return (
-    <div className="flex flex-wrap items-center gap-3 mb-4">
+    <div className="flex flex-wrap items-center gap-2 md:gap-3 mb-4">
       {onSearchChange && (
-        <div className="relative flex-1 min-w-[200px] max-w-sm">
+        <div className="relative w-full sm:flex-1 sm:min-w-[200px] sm:max-w-sm">
           <Search
             size={16}
             className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"

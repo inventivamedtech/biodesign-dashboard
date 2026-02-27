@@ -88,8 +88,9 @@ export function CompareTool() {
                 onClick={() => addNeed(need.id)}
                 className="w-full text-left px-4 py-3 hover:bg-slate-50 transition-colors border-b border-slate-100 last:border-b-0"
               >
+                <p className="text-xs font-mono text-slate-400">{need.idFilha}</p>
                 <p className="text-sm text-slate-700 line-clamp-1">
-                  {need.problem || need.observation}
+                  {need.needStatement || need.problem || need.observation}
                 </p>
                 <div className="flex items-center gap-2 mt-1">
                   <PotentialDots potential={need.potential} />
@@ -110,7 +111,7 @@ export function CompareTool() {
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium text-white"
               style={{ backgroundColor: COLORS[i] }}
             >
-              {(need.problem || need.observation).substring(0, 40)}...
+              {need.idFilha} — {(need.needStatement || need.problem || need.observation).substring(0, 30)}...
               <button onClick={() => removeNeed(need.id)} className="hover:opacity-70">
                 <X size={12} />
               </button>
@@ -135,7 +136,7 @@ export function CompareTool() {
                       className="text-left px-4 py-3 text-xs font-semibold uppercase tracking-wider"
                       style={{ color: COLORS[i], borderBottom: `3px solid ${COLORS[i]}` }}
                     >
-                      Need {i + 1}
+                      {need.idFilha || `Need ${i + 1}`}
                     </th>
                   ))}
                 </tr>

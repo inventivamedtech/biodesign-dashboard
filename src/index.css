@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #F8FAFC;
+  --color-surface: #FFFFFF;
+  --color-border: #E2E8F0;
+
+  --color-cluster-respiratorio: #2563EB;
+  --color-cluster-medicamentos: #7C3AED;
+  --color-cluster-monitoramento: #0891B2;
+  --color-cluster-cateter: #D97706;
+  --color-cluster-derme: #E11D48;
+  --color-cluster-comunicacao: #059669;
+  --color-cluster-mobilidade: #6366F1;
+  --color-cluster-banho: #14B8A6;
+  --color-cluster-agitacao: #F97316;
+  --color-cluster-equipamentos: #8B5CF6;
+  --color-cluster-infraestrutura: #64748B;
+  --color-cluster-educacao: #84CC16;
+  --color-cluster-default: #94A3B8;
+
+  --color-potential-0: #CBD5E1;
+  --color-potential-1: #FBBF24;
+  --color-potential-2: #F97316;
+  --color-potential-3: #EF4444;
+
+  --color-sidebar: #0F172A;
+  --color-sidebar-hover: #1E293B;
+  --color-sidebar-active: #2563EB;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
